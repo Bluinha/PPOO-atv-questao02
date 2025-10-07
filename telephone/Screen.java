@@ -1,12 +1,18 @@
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Prints things out to the screen, when needed
  * Printing to the screen:
  *  System.out.println("hello");
  */
-public class Screen {
-    private final PhoneModel model;
+public class Screen implements Observer {
 
-    public Screen(PhoneModel model) {
-        this.model = model;
+    @Override
+    public void update(PhoneModel model) {
+        int LastDigit = model.getLastDigit();
+
+        System.out.println("Pressionando: "+ LastDigit);
     }
+
 }

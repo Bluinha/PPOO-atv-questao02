@@ -5,10 +5,12 @@ public class Main {
 
         // Build the object graph
         PhoneModel model = new PhoneModel();
-        Screen screen = new Screen(model);
+        Screen screen = new Screen();
         KeyPad keyPad = new KeyPad(model);
 
-        // Run the program
+        model.addObserver(screen);
+
         keyPad.simulateKeyPresses(NUM_DIGITS);
+
     }
 }
